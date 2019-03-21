@@ -1,0 +1,3 @@
+targets:
+  acme: shared-eu-west-1/cjtglgyzg4k6j0105kssa533g
+  default: acme

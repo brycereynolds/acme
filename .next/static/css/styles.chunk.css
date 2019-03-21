@@ -1,0 +1,154 @@
+.container___3aWC6 {
+  --color-highlight-text: #317dbf;
+  --color-document: #c7d236;
+  --color-person: rgba(239,100,35,0.788);
+  --color-message: #1cdada;
+  --color-event: #a85fcc;
+  font-family: "Helvetica Neue";
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+.inputHolder___34FtK {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  padding: 8px;
+  background: #fff;
+  z-index: 1;
+}
+.input___3vvNO {
+  width: 100%;
+  font-size: 24px;
+  line-height: 1.4em;
+  padding: 6px;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.results___135DZ {
+  padding-top: 60px;
+}
+.counts___2znLh {
+  display: flex;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 18px;
+  right: 14px;
+}
+
+.result___O6QIy {
+  position: relative;
+  padding: 10px;
+  display: flex;
+}
+.result___O6QIy:hover {
+  background: #ececec;
+}
+.bullet___2oZFo {
+  font-size: 2rem;
+  flex: 0;
+}
+.title___2EpLw {
+  font-size: 1.3rem;
+  color: var(--color-highlight-text);
+}
+.documentBullet___3EfdP {
+  color: var(--color-document);
+}
+.personBullet___25sXb {
+  color: var(--color-person);
+}
+.messageBullet___zKCDg {
+  color: var(--color-message);
+}
+.eventBullet___3S7xs {
+  color: var(--color-event);
+}
+.tags___zQ988 {
+  position: absolute;
+  right: 0;
+  top: 18px;
+  display: flex;
+  flex-direction: columns;
+}
+.tagSource___1pAld {
+  background: var(--color-highlight-text);
+}
+.tagDocument___2L0QL {
+  background: var(--color-document);
+}
+.tagPerson___3m-dD {
+  background: var(--color-person);
+}
+.tagMessage___hn6-a {
+  background: var(--color-message);
+}
+.tagEvent___-gg1B {
+  background: var(--color-event);
+}
+
+.tag___2Z1NC {
+  color: #fff;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 7px;
+  text-align: center;
+  padding: 6px 5px;
+  margin: 0 5px;
+}
+
+.container___1gAs3 {
+  height: 30px;
+  margin: 0 5px;
+  color: rgba(56,56,56,0.678);
+  cursor: pointer;
+  border-radius: 20px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+.container___1gAs3 .offHover___2hp0n {
+  font-size: 1.5rem;
+  min-width: 2rem;
+}
+.container___1gAs3 .onHover___fBmTO {
+  display: none;
+  padding: 0 10px;
+  font-size: 1.2rem;
+}
+.container___1gAs3 .label___Ap4pW {
+  display: none;
+}
+.container___1gAs3.document___IMPSl {
+  background: var(--color-document);
+}
+.container___1gAs3.person___47XOo {
+  background: var(--color-person);
+}
+.container___1gAs3.message___3iwR3 {
+  background: var(--color-message);
+}
+.container___1gAs3.event___178GG {
+  background: var(--color-event);
+}
+.container___1gAs3:hover {
+  color: #000;
+}
+.container___1gAs3:hover .onHover___fBmTO {
+  display: block;
+}
+.container___1gAs3:hover .offHover___2hp0n {
+  display: none;
+}
+.container___1gAs3:hover .label___Ap4pW {
+  display: block;
+}
+
+
+/*# sourceMappingURL=styles.chunk.css.map*/

@@ -1,0 +1,166 @@
+# mutation CreateArtifact(
+#   $source:ArtifactSource
+#   $category:ArtifactCategory
+#   $timestamp:DateTime
+#   $terms:[String!]
+#   $owner:String
+#   $details:Json
+# ){
+#   createArtifacts(
+#     source: $source
+#     category: $category
+#     timestamp: $timestamp
+#     terms:$terms
+#     owner:$owner
+#     details:$details
+#   ){
+#     id
+#   }
+# }
+
+# https://api.graph.cool/simple/v1/cjtglgyzg4k6j0105kssa533g
+
+enum ArtifactSource {
+  TWITTER
+  DROPBOX
+  SLACK
+  CALENDAR
+  CONTACTS
+  UNKNOWN
+}
+
+enum ArtifactCategory {
+  DOCUMENT
+  EVENT
+  MESSAGE
+  PERSON
+}
+
+type Term @model {
+  id: ID! @isUnique
+  term: String! @isUnique
+  artifacts: [Artifacts!]! @relation(name: "TermOnArtifact")
+}
+
+type Artifacts @model {
+  id: ID! @isUnique
+  externalId: String! @isUnique
+  source: ArtifactSource
+  category: ArtifactCategory
+  timestamp: DateTime
+  owner: String
+  terms: [Term!]! @relation(name: "TermOnArtifact")
+
+  # Normally you wouldn't smash primatives in here but this is a limitation of graph.cool
+  details: Json 
+
+  # # Twitter specific
+  # twitterId: String!
+  # user: String
+  # message: String
+
+  # # Dropbox specific
+  # dropboxId: String!
+  # path: String
+  # title: String
+  # sharedWith: [String!]
+
+  # # Contacts specific
+  # contactId: String!
+  # name: String
+  # company: String
+  # emails: [String!]
+  # phones: [String!]
+  # lastContact: DateTime
+
+  # # Calendar specific
+  # calendarId: String!
+  # title: String
+  # invitees: [String!]
+
+  # # Slack specific
+  # slackId: String!
+  # channel: String
+  # author: String
+  # message: String
+
+}
+
+
+# # graph.cool doesn't allow this atm - we would just implement following
+# # this type of pattern if we owned the service instead of using graph.cool
+
+# type TwitterArtifact implements Artifacts {
+#   id: ID! @isUnique
+#   terms: [String!]
+#   source: ArtifactSource
+#   category: ArtifactCategory
+#   timestamp: DateTime
+#   owner: String
+
+#   # Twitter specific
+#   twitterId: String!
+#   user: String
+#   message: String
+# }
+
+# type DropboxArtifact implements Artifacts {
+#   id: ID! @isUnique
+#   terms: [String!]
+#   source: ArtifactSource
+#   category: ArtifactCategory
+#   timestamp: DateTime
+#   owner: String
+
+#   # Dropbox specific
+#   dropboxId: String!
+#   path: String
+#   title: String
+#   sharedWith: [String!]
+# }
+
+# type ContactArtifact implements Artifacts {
+#   id: ID! @isUnique
+#   terms: [String!]
+#   source: ArtifactSource
+#   category: ArtifactCategory
+#   timestamp: DateTime
+#   owner: String
+
+#   # Contacts specific
+#   contactId: String!
+#   name: String
+#   company: String
+#   emails: [String!]
+#   phones: [String!]
+#   lastContact: DateTime
+# }
+
+# type CalendarArtifact implements Artifacts {
+#   id: ID! @isUnique
+#   terms: [String!]
+#   source: ArtifactSource
+#   category: ArtifactCategory
+#   timestamp: DateTime
+#   owner: String
+
+#   # Calendar specific
+#   calendarId: String!
+#   title: String
+#   invitees: [String!]
+# }
+
+# type SlackArtifact implements Artifacts {
+#   id: ID! @isUnique
+#   terms: [String!]
+#   source: ArtifactSource
+#   category: ArtifactCategory
+#   timestamp: DateTime
+#   owner: String
+
+#   # Slack specific
+#   slackId: String!
+#   channel: String
+#   author: String
+#   message: String
+# }

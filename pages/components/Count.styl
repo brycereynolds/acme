@@ -1,0 +1,43 @@
+// TODO change the structure so elements are connected (ie no margin)
+// No time to do this now so we deal with the jitter from left-to-right
+.container
+  height 30px
+  margin 0 5px
+  color #383838ad
+  cursor pointer
+  border-radius 20px
+  display flex
+  justify-items center
+  align-items center
+  text-align center
+
+  .offHover
+    font-size 1.5rem
+    min-width 2rem
+
+  .onHover
+    display none
+    padding 0 10px
+    font-size 1.2rem
+
+  .label
+    display none
+
+  &.document
+    background var(--color-document)
+  &.person
+    background var(--color-person)
+  &.message
+    background var(--color-message)
+  &.event
+    background var(--color-event)
+
+  &:hover
+    color #000000
+    .onHover
+      display block
+    .offHover
+      display none
+    .label
+      display block
+
